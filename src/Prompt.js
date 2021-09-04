@@ -30,6 +30,18 @@ const buttonStyle = {
   justifyContent: 'center',
 }
 
+const meaningStyle = {
+  fontSize: '40px',
+  color: 'blue',
+  border: '5px solid blue',
+  width: '80%', 
+  margin: 'auto',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '30px'
+}
+
 const Prompt = props => {
   const makeClickHandler = (index) => {
     return () => {
@@ -51,6 +63,9 @@ const Prompt = props => {
     <div style={promptStyle}>
       <h4>Phrasal Verbs</h4>
       <div>{props.question}</div>
+      {(props.answerClicked !== null && props.answerClicked !== props.correctAnswer) && <div style={meaningStyle}>
+        {props.options[props.correctAnswer]}: {props.meaning}
+      </div>}
       <div style={optionsStyle}>
         {
           props.options.map((option, i) => 
@@ -66,6 +81,7 @@ Prompt.propTypes = {
   question: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.string),
   correctAnswer: PropTypes.number,
+  meaning: PropTypes.string,
   onComplete: PropTypes.func
 };
 

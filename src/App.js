@@ -5,7 +5,7 @@ import { getNextQuestionAndAnswers } from './utils';
 
 
 function App() {
-  const [{ question, answers, correctAnswer }, setQuestion] = useState(getNextQuestionAndAnswers(data, null))
+  const [{ question, answers, correctAnswer, meaning }, setQuestion] = useState(getNextQuestionAndAnswers(data, null))
 
   const [correctCount, setCorrectCount] = useState(0)
   const [doneCount, setDoneCount] = useState(0)
@@ -38,6 +38,7 @@ function App() {
     <Prompt
       question={question}
       options={answers}
+      meaning={meaning}
       correctAnswer={correctAnswer}
       answerClicked={answerClicked}
       onComplete={handleOnComplete}

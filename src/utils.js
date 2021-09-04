@@ -12,10 +12,12 @@ const getNextQuestionAndAnswers = (data, history) => {
 
     const question = data[questionIndex]['example_with_blanks']
     const answers = answersIndices.map(i => data[i]['example_answer'])
+    const meaning = data[questionIndex]['meaning']
     return {
       question,
       answers,
-      correctAnswer
+      correctAnswer,
+      meaning
     }
   }
 }
