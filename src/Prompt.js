@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const promptStyle = {
   height: '100vh',
-  width: '500px',
+  width: 'min(500px, 100vw)',
   fontSize: '30px',
   display: 'flex',
   justifyContent: 'space-between',
@@ -17,12 +17,13 @@ const optionsStyle = {
   flexDirection: 'row',
   flexWrap: 'wrap',
   alignItems: 'center',
-  justifyContent: 'stretch'
+  justifyContent: 'stretch',
+  paddingBottom: '120px'
 }
 const buttonStyle = {
   boxSizing: 'border-box',
   margin: '5px',
-  width: '48%',
+  width: 'max(250px, 100vw)',
   border: '3px solid',
   display: 'flex',
   alignItems: 'baseline',
