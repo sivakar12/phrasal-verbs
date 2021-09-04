@@ -9,7 +9,8 @@ const promptStyle = {
   justifyContent: 'space-between',
   alignItems: 'stretch',
   flexDirection: 'column',
-  margin: 'auto'
+  margin: 'auto',
+  fontFamily: 'Merriweather, serif'
 }
 const optionsStyle = {
   display: 'flex',
