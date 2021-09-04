@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const promptStyle = {
   height: '100vh',
   width: '500px',
-  fontSize: '50px',
+  fontSize: '30px',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'stretch',
@@ -35,7 +35,11 @@ const Prompt = props => {
       <h4>Phrasal Verbs</h4>
       <div>{props.question}</div>
       <div style={optionsStyle}>
-        {props.options.map(option => <div style={buttonStyle}>{option}</div>)}
+        {
+          props.options.map((option, i) => 
+            <div key={i} style={buttonStyle}>{option}</div>
+          )
+        }
       </div>
     </div>
   )

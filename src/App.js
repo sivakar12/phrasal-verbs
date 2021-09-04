@@ -1,13 +1,14 @@
-import data from './data.json'
 import Prompt from './Prompt';
+import data from './data.json'
+import { getNextQuestionAndAnswers } from './utils';
 
-console.log(data)
 
 function App() {
+  const { question, answers, correctAnswer } = getNextQuestionAndAnswers(data, null)
   return (
     <Prompt
-      question="fill in the blanks"
-      options={['one', 'two', 'three', 'four']}
+      question={question}
+      options={answers}
     />
   );
 }
