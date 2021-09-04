@@ -9,6 +9,7 @@ function App() {
     <Prompt
       question={question}
       options={answers}
+      correctAnswer={correctAnswer}
     />
   );
 }

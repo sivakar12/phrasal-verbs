@@ -7,14 +7,15 @@ const getNextQuestionAndAnswers = (data, history) => {
       answersIndices.add(Math.floor(Math.random() * totalItems))
     }
     answersIndices = Array.from(answersIndices)
-    const questionIndex = answersIndices[Math.floor(Math.random() * 4)]
+    const correctAnswer = Math.floor(Math.random() * 4)
+    const questionIndex = answersIndices[correctAnswer]
 
     const question = data[questionIndex]['example_with_blanks']
     const answers = answersIndices.map(i => data[i]['example_answer'])
     return {
       question,
       answers,
-      correctAnswer: questionIndex
+      correctAnswer
     }
   }
 }
