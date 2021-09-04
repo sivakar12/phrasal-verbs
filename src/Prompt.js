@@ -24,7 +24,7 @@ const buttonStyle = {
   boxSizing: 'border-box',
   margin: '5px',
   width: 'max(250px, 100vw)',
-  border: '3px solid',
+  border: '3px solid black',
   display: 'flex',
   alignItems: 'baseline',
   justifyContent: 'center',
@@ -39,10 +39,10 @@ const Prompt = props => {
   const getButtonStyle = (i) => {
     if (props.answerClicked !== null) {
       if (i === props.answerClicked && props.answerClicked !== props.correctAnswer) {
-        return {...buttonStyle, backgroundColor: 'red'}
+        return {...buttonStyle, backgroundColor: 'red', color: 'white' }
       }
       if (i === props.correctAnswer) {
-        return {...buttonStyle, backgroundColor: 'green'}
+        return {...buttonStyle, backgroundColor: 'green', color: 'white' }
       }
     }
     return buttonStyle
