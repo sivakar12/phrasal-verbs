@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 
 const promptStyle = {
@@ -30,15 +30,14 @@ const buttonStyle = {
 }
 
 const Prompt = props => {
-  const [answerClicked, setAnswerClicked] = useState(null)
   const makeClickHandler = (index) => {
     return () => {
-      setAnswerClicked(index)
+      props.onComplete(index)
     }
   }
   const getButtonStyle = (i) => {
-    if (answerClicked !== null) {
-      if (i === answerClicked && answerClicked !== props.correctAnswer) {
+    if (props.answerClicked !== null) {
+      if (i === props.answerClicked && props.answerClicked !== props.correctAnswer) {
         return {...buttonStyle, backgroundColor: 'red'}
       }
       if (i === props.correctAnswer) {
@@ -66,6 +65,7 @@ Prompt.propTypes = {
   question: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.string),
   correctAnswer: PropTypes.number,
+  onComplete: PropTypes.func
 };
 
 export default Prompt
