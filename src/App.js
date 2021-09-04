@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+import data from './data.json'
+console.log(data)
 function App() {
   return (
     <div className="App">
