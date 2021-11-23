@@ -21,6 +21,7 @@ function App() {
   }
   
   useEffect(() => {
+    if (doneCount === 0) { return }
     let waitTime;
     if (correctAnswer === answerClicked) {
       waitTime = 1000;
