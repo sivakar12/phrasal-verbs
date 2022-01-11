@@ -5,7 +5,8 @@ import { getNextQuestionAndAnswers } from './utils';
 
 
 function App() {
-  const [{ question, answers, correctAnswer, meaning }, setQuestion] = useState(getNextQuestionAndAnswers(data, null))
+  const [{ question, answers, correctAnswer, meaning }, setQuestion] = 
+    useState(getNextQuestionAndAnswers(data, null))
 
   const [correctCount, setCorrectCount] = useState(0)
   const [doneCount, setDoneCount] = useState(0)
@@ -22,12 +23,7 @@ function App() {
   
   useEffect(() => {
     if (doneCount === 0) { return }
-    let waitTime;
-    if (correctAnswer === answerClicked) {
-      waitTime = 1000;
-    } else {
-      waitTime = 4000;
-    }
+    let waitTime = correctAnswer === answerClicked ? 1000 : 4000;
     setTimeout(() => {
       setAnswerClicked(null)
       setQuestion(getNextQuestionAndAnswers(data, null))
